@@ -16,8 +16,7 @@ public class BasePage {
              element.click();
         } catch (Exception e) {
             throw new Exception("The element " + element + " can't be clicked"); 
-        }
-       
+        }  
     }
 
     public boolean isDisplayed(WebElement element) throws Exception {
@@ -26,7 +25,6 @@ public class BasePage {
         }catch (Exception e) {
             throw new Exception("The element " + element + " isn't displayed");
         }
-
     }
 
     public String getText(WebElement element) throws Exception {
@@ -35,7 +33,6 @@ public class BasePage {
         }catch (Exception e) {
             throw new Exception("The text of the element " + element + " can't be obtained");
         }
-
     }
 
     public String getTitle() throws Exception {
@@ -44,7 +41,6 @@ public class BasePage {
         }catch (Exception e) {
             throw new Exception("The title can't be obtained");
         }
-
     }
     
 }
