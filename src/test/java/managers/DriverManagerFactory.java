@@ -1,4 +1,6 @@
-package browser_manager;
+package managers;
+
+import enums.DriverType;
 
 public class DriverManagerFactory {
     
