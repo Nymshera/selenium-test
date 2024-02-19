@@ -5,6 +5,7 @@ import enums.DriverType;
 import io.cucumber.java.Before;
 import managers.DriverManager;
 import managers.DriverManagerFactory;
+import utils.TestContext;
 
 public class Hooks {
 
@@ -15,6 +16,8 @@ public class Hooks {
     public void setUp() {
         driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         driver = driverManager.getDriver();
+        driver.manage().window().maximize();
+        TestContext.getInstance().setDriver(driver);
     }
 
     public static WebDriver getDriver() {
