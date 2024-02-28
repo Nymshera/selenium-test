@@ -2,9 +2,11 @@ package steps;
 
 import org.openqa.selenium.WebDriver;
 import enums.DriverType;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import managers.DriverManager;
 import managers.DriverManagerFactory;
+import utils.TestContext;
 
 public class Hooks {
 
@@ -15,6 +17,15 @@ public class Hooks {
     public void setUp() {
         driverManager = DriverManagerFactory.getManager(DriverType.CHROME);
         driver = driverManager.getDriver();
+        driver.manage().window().maximize();
+        TestContext.getInstance().setDriver(driver);
+    }
+
+    @After
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     public static WebDriver getDriver() {
