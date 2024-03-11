@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 public class FreeRangeTestersPage extends BasePage{
 
     private String sectionLink = "//a[normalize-space()='%s' and @href]";
+    private String choosePlanButton = "//a[normalize-space()='Elegir Plan']";
 
     public FreeRangeTestersPage() {
         super(driver);
@@ -22,6 +23,10 @@ public class FreeRangeTestersPage extends BasePage{
         //Reemplaza el marcador de posición en secrionLink con el nombre
         String xpathSection = String.format(sectionLink,section);
         clickElement(By.xpath(xpathSection));
+    }
+
+    public void clickElegirPlan() throws Exception {
+        clickElement(By.xpath(choosePlanButton));
     }
 
     

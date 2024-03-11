@@ -1,10 +1,21 @@
 package steps;
 
+import java.util.Arrays;
+import java.util.List;
+import org.testng.Assert;
 import io.cucumber.java.en.*;
+import pages.CoursesPage;
 import pages.FreeRangeTestersPage;
+import pages.FundamentosTestingPage;
+import pages.IntroduccionTestingPage;
+import pages.RegisterPage;
 
 public class FreeRangeTestersSteps {
     FreeRangeTestersPage freeRangeTestersPage = new FreeRangeTestersPage();
+    CoursesPage coursesPage = new CoursesPage();
+    FundamentosTestingPage fundamentosTestingPage = new FundamentosTestingPage();
+    IntroduccionTestingPage introduccionTestingPage = new IntroduccionTestingPage();
+    RegisterPage registerPage = new RegisterPage();
 
     @Given("^I'm on the Free Range Testers webside$")
     public void iNavigateToFrt() throws Exception {
@@ -16,6 +27,22 @@ public class FreeRangeTestersSteps {
         freeRangeTestersPage.clickOnSectionNavigationBar(section);
     }
 
+    @And("^Select Introducción al Testing$")
+    public void navigateToIntro() throws Exception {
+        coursesPage.clickFundamentosTesting();
+        fundamentosTestingPage.clickIntroduccionTesting();
+    }
 
+    @When("^I select Elegir Plan$")
+    public void selectElegirPlan() throws Exception {
+        freeRangeTestersPage.clickElegirPlan();
+    }
+
+    @Then("^I can validate the options in the checkout page$")
+    public void validateOptions() throws Exception {
+        List<String> list = registerPage.returnPlanDropdownValues();
+        List<String> listOptions = Arrays.asList("Academia: $16.99 / mes • 12 productos", "Academia: $176 / año • 12 productos", "Free: Gratis • 1 producto"); 
+        Assert.assertEquals(listOptions, list);
+    }
 
 }
