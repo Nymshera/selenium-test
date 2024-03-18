@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
     features = "src/test/resources/features",
     glue = "steps",
-    plugin = {"pretty", "html:target/cucumber-reports"},
+    plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
     tags = "@Navigation"
 )
 

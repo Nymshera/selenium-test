@@ -27,18 +27,18 @@ public class FreeRangeTestersSteps {
         freeRangeTestersPage.clickOnSectionNavigationBar(section);
     }
 
-    @And("^Select Introducción al Testing$")
+    @And("^Selects? Introducción al Testing$")
     public void navigateToIntro() throws Exception {
         coursesPage.clickFundamentosTesting();
         fundamentosTestingPage.clickIntroduccionTesting();
     }
 
-    @When("^I select Elegir Plan$")
+    @When("^(?:I|The user|The client) selects? Elegir Plan$")
     public void selectElegirPlan() throws Exception {
         freeRangeTestersPage.clickElegirPlan();
     }
 
-    @Then("^I can validate the options in the checkout page$")
+    @Then("^(?:I|The user|The client) can validate the options in the checkout page$")
     public void validateOptions() throws Exception {
         List<String> list = registerPage.returnPlanDropdownValues();
         List<String> listOptions = Arrays.asList("Academia: $16.99 / mes • 12 productos", "Academia: $176 / año • 12 productos", "Free: Gratis • 1 producto"); 
