@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 
 public class TrademeHomePage extends BasePage{
 
@@ -16,11 +17,11 @@ public class TrademeHomePage extends BasePage{
     }
 
     public void performSearch(String product) throws Exception {
-        write(searchTextField, product);
+        write(By.xpath(searchTextField), product);
     }
 
     public void clickSearchButton() throws Exception {
-        clickElement(searchButton);
+        clickElement(By.xpath(searchButton));
     }
 
     public boolean homePageIsDisplayed() throws Exception {
