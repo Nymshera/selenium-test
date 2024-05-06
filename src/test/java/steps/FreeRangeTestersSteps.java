@@ -46,7 +46,7 @@ public class FreeRangeTestersSteps {
     @Then("^(?:I|The user|The client) can validate the options in the checkout page$")
     public void validateOptions() throws Exception {
         List<String> list = registerPage.returnPlanDropdownValues();
-        List<String> listOptions = Arrays.asList("Academia: $16.99 / mes • 12 productos", "Academia: $176 / año • 12 productos", "Free: Gratis • 1 producto"); 
+        List<String> listOptions = Arrays.asList("Academia: $16.99 / mes • 12 productos", "Academia: $176 / año • 12 productos", "Free: Gratis • 3 producto"); 
         Assert.assertEquals(listOptions, list);
     }
 
