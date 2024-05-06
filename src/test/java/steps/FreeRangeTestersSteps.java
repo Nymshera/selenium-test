@@ -22,9 +22,14 @@ public class FreeRangeTestersSteps {
         freeRangeTestersPage.navigateToFreeRangeTesters();
     }
 
-    @When("I go to {word} using the navigation bar") 
+    @When("I go to {string} using the navigation bar") 
     public void navigationBarUse(String section) throws Exception {
         freeRangeTestersPage.clickOnSectionNavigationBar(section);
+    }
+
+    @Then("I'm on the {string}")
+    public void validateSection(String section) throws Exception {
+        Assert.assertTrue(freeRangeTestersPage.validateSection(section));
     }
 
     @And("^Selects? Introducción al Testing$")

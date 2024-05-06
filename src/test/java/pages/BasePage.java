@@ -28,6 +28,10 @@ public class BasePage {
             throw new Exception("The website " + url + " couldn't be loaded");
         }
     }
+
+    public String getUrl() {
+        return driver.getCurrentUrl();
+    }
     
     public void clickElement(By by) throws Exception {
         try {

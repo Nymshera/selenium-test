@@ -7,15 +7,18 @@ Feature: Navigation bar
     Background: I am on the Free Range Testers web without logging in
         Given I'm on the Free Range Testers webside
 
+    @Sections
     Scenario Outline: Navigate to diferents sections
-        When I go to <section> using the navigation bar
+        When I go to "<section>" using the navigation bar
+        Then I'm on the "<section>"
         Examples:
-            | section   |
-            | Cursos    |
-            | Recursos  |
-            | Blog      |
-            | Mentorías |
-            | Udemy     |
+            | section              |
+            | Cursos               |
+            | Recursos             |
+            | Blog                 |
+            | Programas de estudio |
+            | Mentorías            |
+            | Udemy                |
 
     Scenario: Courses are presented correctly to potencial customers
         When I go to Cursos using the navigation bar
