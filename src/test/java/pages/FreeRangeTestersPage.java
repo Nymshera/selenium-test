@@ -7,7 +7,7 @@ import utils.NavigationBar;
 public class FreeRangeTestersPage extends BasePage {
 
     private String sectionLink = "//a[normalize-space()='%s' and @href]";
-    private String choosePlanButton = "//a[normalize-space()='Elegir Plan']";
+    private String choosePlanButton = "//a[normalize-space()='Elige plan']";
 
     public FreeRangeTestersPage() {
         super(driver);
