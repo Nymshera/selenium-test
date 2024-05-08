@@ -6,6 +6,12 @@ pipeline {
     }
     
     stages {
+        stage('Clean') {
+            steps {
+                // Limpiar el directorio de salida del proyecto
+                sh 'gradle clean'
+            }
+        }
         stage('Checkout') {
             steps {
                 // Clonar el repositorio desde GitHub
