@@ -1,13 +1,12 @@
 package pages;
 
 import org.openqa.selenium.By;
-
 import utils.NavigationBar;
 
 public class FreeRangeTestersPage extends BasePage {
 
     private String sectionLink = "//a[normalize-space()='%s' and @href]";
-    private String choosePlanButton = "//a[normalize-space()='Elige plan']";
+    private String choosePlanButton = "//a[normalize-space()='Elegir Plan']";
 
     public FreeRangeTestersPage() {
         super(driver);
